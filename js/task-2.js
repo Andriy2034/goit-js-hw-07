@@ -27,17 +27,14 @@ const images = [
 
 const ulElem = document.querySelector(".gallery");
 
-for (const image of images) {
-  const liElem = document.createElement("li");
-  const imgElem = document.createElement("img");
+const galleryMarkup = images
+  .map(
+    (image) => `
+      <li class="gallery-item">
+        <img src="${image.url}" alt="${image.alt}" />
+      </li>
+    `,
+  )
+  .join("");
 
-  imgElem.src = image.url;
-  imgElem.alt = image.alt;
-  imgElem.width = 400;
-  imgElem.height = 250;
-
-  liElem.append(imgElem);
-  ulElem.append(liElem);
-}
-
-ulElem.classList.add("mark");
+ulElem.insertAdjacentHTML("beforeend", galleryMarkup);

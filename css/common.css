@@ -13,10 +13,3 @@ body {
   color: #212121;
   line-height: 1.5;
 }
-
-.mark {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 24px;
-}
